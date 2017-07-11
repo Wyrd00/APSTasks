@@ -69,3 +69,5 @@
 
   if (container) renderState(state);
 })();
+
+module.exports =

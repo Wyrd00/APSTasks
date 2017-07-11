@@ -2,6 +2,8 @@
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
 
+
+
 var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
   // You do not need to understand the implementation of this function.
@@ -15,7 +17,9 @@ var todoFunctions = {
     return incrementCounter;
   })(),
   addTodo: function(todos, newTodo) {
-    var toDo = [];
+    // var toDo = [];
+    var updatedTodo = todos.concat(newTodo);
+    return updatedTodo;
     // should leave the input argument todos unchanged
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
@@ -39,3 +43,5 @@ var todoFunctions = {
     // hint: array.slice, array.sort
   },
 };
+
+module.exports = todoFunctions
