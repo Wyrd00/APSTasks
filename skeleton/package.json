@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc tape test.js | tap-spec"
   },
-  "author": "Amy Paul Steph",
+  "author": "Amy Paul Stef",
   "license": "ISC",
   "devDependencies": {
     "istanbul": "^0.4.5",

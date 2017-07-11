@@ -1,7 +1,7 @@
 var test = require('tape');
 var logic = require('./logic.js');
 
-test('Example test', function(t) {
-  t.pass();
+test('If the test is true it should return true', function(t) {
+  t.equal(newTodo(), true, "Should be true");
   t.end();
 });
