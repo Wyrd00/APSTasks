@@ -16,8 +16,10 @@ var todoFunctions = {
 
     return incrementCounter;
   })(),
+
   addTodo: function(todos, newTodo) {
     // var toDo = [];
+    newTodo.id = todoFunctions.generateId();
     var updatedTodo = todos.concat(newTodo);
     return updatedTodo;
     // should leave the input argument todos unchanged
