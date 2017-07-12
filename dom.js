@@ -15,11 +15,12 @@
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
-    //console.log(todo);
+    console.log(todo);
     var todoNode = document.createElement('li');
     var spanAdd = document.createElement("span");
     var textnode = document.createTextNode(todo.description);
-    spanAdd.setAttribute("class", "listOfTodos");
+    spanAdd.setAttribute("class", "listOfTodos-"+todo.done);
+    console.log(todo);
     spanAdd.appendChild(textnode);
     todoNode.appendChild(spanAdd);
     //console.log(todoNode);
@@ -33,6 +34,7 @@
     deleteButtonNode.setAttribute("id", "delete-button"+todo.id);
     var labeldelete = document.createElement("label");
     labeldelete.setAttribute("for", "delete-button"+todo.id);
+
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -46,6 +48,7 @@
     markButtonNode.setAttribute("id", "mark-button"+todo.id);
     var labelmark = document.createElement("label");
     labelmark.setAttribute("for", "mark-button"+todo.id);
+
     markButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);

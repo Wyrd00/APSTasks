@@ -1,9 +1,6 @@
 body {
 font-family: 'FontAwesome';
-/*background: #20002c;  /* fallback for old browsers */
-/*background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+background: linear-gradient(to right, #cbb4d4, #20002c);
 }
 
 h1 {
@@ -31,28 +28,16 @@ li {
 
 li:nth-child(2n){
 	background: #f7f7f7;
-
 }
 
 span {
-	/*background: #e74c3c;*/
 	height: 40px;
   margin-left: 10px;
 	margin-right: 20px;
   display: inline-block;
 	text-align: center;
-	/*color: white;
-	width: 0;*/
-
-	/*transition: 0.2s linear;*/
-	/*opacity: 0;*/
-  border: 3px solid blue;
+  /*border: 3px solid blue;*/
 }
-
-/*li:hover span {
-	width: 40px;
-	opacity: 1.0;
-}*/
 
 input {
 	font-size: 18px;
@@ -78,9 +63,23 @@ input: focus{
 
 }
 
+.listOfTodos-true {
+  position: relative;
+}
+.listOfTodos-true:after {
+  /*Put a line through the marked text*/
+  content: '';
+  border-bottom: 4px solid red;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+
 .delete-button {
-  /*position: relative;*/
-  background: url('trash.png') center center no-repeat;
+	position: relative;
+  background: url('./trash.png') center center no-repeat;
+
   padding: 16px 16px;
 	background-color:#f16622;
 	border-radius:8px;
@@ -96,9 +95,8 @@ input: focus{
 	top:1px;
 }
 
-
 .mark-button {
-  background: url('check.png') center center no-repeat;
+  background: url('./check.png') center center no-repeat;
   padding: 16px 16px;
   background-color:#99cd19;
   border-radius:8px;
