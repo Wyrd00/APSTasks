@@ -2,8 +2,6 @@
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
 
-
-
 var todoFunctions = {
   // todoFunctions.generateId() will give you a unique id
   // You do not need to understand the implementation of this function.
@@ -16,10 +14,9 @@ var todoFunctions = {
 
     return incrementCounter;
   })(),
-
   addTodo: function(todos, newTodo) {
-    // var toDo = [];
     newTodo.id = todoFunctions.generateId();
+    newTodo.done = false;
     var updatedTodo = todos.concat(newTodo);
     return updatedTodo;
     // should leave the input argument todos unchanged
@@ -28,21 +25,20 @@ var todoFunctions = {
     // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    for (var i=0; i<=todos.length; i++ ) {
-      if (todos[i].id === idToDelete ) {
-          todos[i].slice([i],1);
-      }
-    };
-//    var finalTodo = todos.pop();
-    return todos;
-    // filter(function(){
-    //   return
-    // })
+    var finalTodo = todos.map(function(elem){
+      return (elem.id !== idToDelete);
+    });
+    return finalTodo;
     // should leave the input argument todos unchanged
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
+    if ()
+    var finalTodo = todos.filter(function(elem){
+      return (elem.id !== idToDelete);
+    });
+    return finalTodo;
     // should leave the input argument todos unchanged
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled

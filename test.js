@@ -2,77 +2,104 @@ var test = require('tape');
 var logic = require('./logic.js');
 var mockdata = require("./mockdata.js");
 
+var initialTodo = mockdata.state;
+
 
 console.log(logic);
 console.log(mockdata);
 
-test('If the test is true it should return true', function(t) {
-  t.equal(0, 0, "Should be 0");
-  t.end();
-});
+// test('If the test is true it should return true', function(t) {
+//   t.equal(0, 0, "Should be 0");
+//   t.end();
+// });
 
-// Test One
+// Test addTodo successfully pass
 test('Add todo function', function(t) {
-  var initialTodo = mockdata.state;
-  // [
-  //   { id: -3, description: 'first todo' },
-  //   { id: -2, description: 'second todo' },
-  //   { id: -1, description: 'third todo' },
-  // ]
-
-  var newTodoSub = [{ id: 0, description: 'new todo' }]
-
+  //var initialTodo = mockdata.state;
+  var newTodoSub = [{ id: 0, description: 'mix ingredients', done: false }];
   var updatedTodo = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
-    { id: 0, description: 'new todo' },
-  ]
-
+    { id: -3, description: 'smash avocado', done: false },
+    { id: -2, description: 'cut onions', done: false },
+    { id: -1, description: 'dice tomatoes', done: false },
+    { id: 0, description: 'mix ingredients', done: false },
+  ];
   var result = logic.addTodo(initialTodo, newTodoSub);
-
-  t.deepEqual(result, updatedTodo, "Should be add todo with correct ID");
-  console.log(result);
+  t.deepEqual(result, updatedTodo, "Should add todo successfully");
+  // console.log(result);
   t.end();
 });
 
-
-//Test Two
+//Test generateId successfully
 test('Add generateId function', function(t) {
-
-  var initialTodo = mockdata.state;
-
-  var newTodoSub = { description: 'new todo' }
-
+  //var initialTodo = mockdata.state;
+  var newTodoSub = { description: 'mix ingredients' };
   var result = logic.addTodo(initialTodo, newTodoSub);
-
   var updatedTodo = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
-    { id: 2, description: 'new todo' },
+    { id: -3, description: 'smash avocado', done: false },
+    { id: -2, description: 'cut onions', done: false },
+    { id: -1, description: 'dice tomatoes', done: false },
+    { id: 2, description: 'mix ingredients', done: false },
   ]
-
-  t.deepEqual(result, updatedTodo, "Should be add todo with correct ID");
-  console.log(result);
+  t.deepEqual(result, updatedTodo, "Should add todo with correct ID");
+  // console.log(result);
   t.end();
 });
 
+//Test done:false key when addTodo function is called
+test('Add done: false key', function(t) {
+  //var initialTodo = mockdata.state;
+  var newTodoSub = { description: 'new todo' };
+  var result = logic.addTodo(initialTodo, newTodoSub);
+  var updatedTodo = [
+    { id: -3, description: 'smash avocado', done: false },
+    { id: -2, description: 'cut onions', done: false },
+    { id: -1, description: 'dice tomatoes', done: false },
+    { id: 3, description: 'new todo', done: false },
+  ];
+  t.deepEqual(result, updatedTodo, "Should add todo with correcr 'done:false' key");
+  // console.log(result);
+  t.end();
+});
 
-//Test Three
+//Test deleteTodo successully pass
 test("Delete any todo", function(t) {
-  var initialTodo = mockdata.state;
-
+  //var initialTodo = mockdata.state;
   var deletingId = -1;
-
-  var result = logic.deleteTodo(initialTodo, deletingId)
-
+  var result = logic.deleteTodo(initialTodo, deletingId);
   var finalTodo = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-  ]
-
+    { id: -3, description: 'smash avocado', done: false },
+    { id: -2, description: 'cut onions', done: false },
+  ];
   t.deepEqual(result, finalTodo, "Should remove the Object with id -1");
-  console.log(result);
+  // console.log(result);
+  t.end();
+});
+
+// //Test deleteTodo successfully fail
+// test("DeleteTodo", function(t) {
+//   // var initialTodo = mockdata.state;
+//   var deletingId = -2;
+//   var result = logic.deleteTodo(initialTodo, deletingId)
+//   var finalTodo = [
+//     { id: -3, description: 'first todo' },
+//     { id: -2, description: 'second todo' },
+//   ]
+//   t.deepEqual(result, finalTodo, "Should remove the Object with id -1");
+//   // console.log(result);
+//   t.end();
+// });
+
+//Test markTodo 'done' from false to true
+test("Test markTodo to change 'done' boolean from false to true", function(t) {
+  //var initialTodo = mockdata.state;
+  var idToChange = -1;
+  var result = logic.markTodo(initialTodo, idToChange);
+  var finalTodo = [
+    { id: -3, description: 'smash avocado', done: false },
+    { id: -2, description: 'cut onions', done: false },
+    { id: -1, description: 'dice tomatoes', done: true },
+  ];
+  t.deepEqual(result, finalTodo, "Should change 'done' value with id -1");
+  // console.log(result);
   t.end();
 });
