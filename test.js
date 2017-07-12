@@ -8,7 +8,6 @@ var initialTodo = mockdata.state;
 console.log(logic);
 console.log(mockdata);
 
-
 // Test addTodo successfully pass
 test('Add todo function', function(t) {
   //var initialTodo = mockdata.state;

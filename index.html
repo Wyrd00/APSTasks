@@ -6,14 +6,17 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id = "todo-container">
-        <ul>
-        </ul>
+    <div id="container">
+      <h1>To-Do List</h1>
+      <div id = "todo-container">
+          <ul>
+          </ul>
+      </div>
+      <form id="add-todo">
+        <input type="text" name="description" id="description" value="" placeholder="Add New Todo">
+        <input type="submit" name="submitbutton" value="Submit">
+      </form>
     </div>
-    <form id="add-todo">
-      <input type="text" name="description" id="description" value="">
-      <input type="submit" name="submitbutton" value="Submit">
-    </form>
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>

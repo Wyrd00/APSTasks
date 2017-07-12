@@ -15,14 +15,14 @@
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
-    console.log(todo);
+    //console.log(todo);
     var todoNode = document.createElement('li');
     var spanAdd = document.createElement("span");
     var textnode = document.createTextNode(todo.description);
     spanAdd.setAttribute("class", "listOfTodos");
     spanAdd.appendChild(textnode);
     todoNode.appendChild(spanAdd);
-    console.log(todoNode);
+    //console.log(todoNode);
     document.getElementById("todo-container").appendChild(todoNode);
 
     // add span holding description (done and done)
@@ -56,11 +56,11 @@
       event.preventDefault();
       var description = document.getElementById("description").value;
       var input = event.target.description.target;
-      console.log(description);
+    //  console.log(description);
     //  hint: todoFunctions.addTodo
       var newTodo = {}; // ?? change this!
       newTodo.description = description;
-      console.log(newState);
+    //  console.log(newState);
       var newState = todoFunctions.addTodo(state, newTodo);
       update(newState);
     });
