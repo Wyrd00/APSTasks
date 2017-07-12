@@ -35,8 +35,8 @@ var todoFunctions = {
   },
   markTodo: function(todos, idToMark) {
     var finalTodo = todos.map(function(elem){
-      var newTodo = Object(elem);
-      if (elem.id === idToMark) {
+      var newTodo = Object.assign({}, elem);
+      if (newTodo.id === idToMark) {
          newTodo.done = !newTodo.done;
       }
       return newTodo;

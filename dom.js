@@ -1,7 +1,7 @@
 // part 2 linking it all together
 // The function here is called an iife,
 // it keeps everything inside hidden from the rest of our application
-(function() {
+ (function() {
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
@@ -10,14 +10,22 @@
     { id: -3, description: 'first todo' },
     { id: -2, description: 'second todo' },
     { id: -1, description: 'third todo' },
+    { id: 0, description: 'fourth todo' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-    // you will need to use addEventListener
+    var spanAdd = document.createElement("span");
+    var textnode = document.createTextNode(todo.description);
+    spanAdd.setAttribute("class", "listOfTodos");
+    spanAdd.appendChild(textnode);
+    todoNode.appendChild(spanAdd);
+    console.log(todoNode);
+    document.getElementById("todo-container").appendChild(todoNode);
 
-    // add span holding description
+    // add span holding description (done and done)
+
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
@@ -28,6 +36,7 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
+
 
     // add classes for css
 

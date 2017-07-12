@@ -12,5 +12,4 @@ var state2 = [
 
 module.exports = {
   state: state,
-  state2: state2
 };

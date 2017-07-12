@@ -1,9 +1,9 @@
 var test = require('tape');
 var logic = require('./logic.js');
 var mockdata = require("./mockdata.js");
+var dom = require("./dom.js");
 
 var initialTodo = mockdata.state;
-
 
 console.log(logic);
 console.log(mockdata);
@@ -82,6 +82,21 @@ test("Test markTodo to change 'done' boolean from false to true", function(t) {
     { id: -1, description: 'dice tomatoes', done: true },
   ];
   t.deepEqual(result, finalTodo, "Should change 'done' with id -1");
+  t.end();
+});
+
+test("Test markTodo to change 'done' boolean from false to true", function(t) {
+  //var initialTodo = mockdata.state;
+  // console.log(initialTodo);
+  var idToChange = -3;
+  var result = logic.markTodo(initialTodo, idToChange);
+  // console.log(result);
+  var finalTodo = [
+    { id: -3, description: 'smash avocado', done: true },
+    { id: -2, description: 'cut onions', done: false },
+    { id: -1, description: 'dice tomatoes', done: false },
+  ];
+  t.deepEqual(result, finalTodo, "Should change 'done' with id -3");
   // console.log(result);
   t.end();
 });
