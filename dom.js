@@ -25,23 +25,32 @@
     //console.log(todoNode);
     document.getElementById("todo-container").appendChild(todoNode);
 
+    console.log(todo.id);
     // add span holding description (done and done)
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.setAttribute("class", "delete-button");
+    deleteButtonNode.setAttribute("id", "delete-button"+todo.id);
+    var labeldelete = document.createElement("label");
+    labeldelete.setAttribute("for", "delete-button"+todo.id);
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
+    todoNode.appendChild(labeldelete);
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
     var markButtonNode = document.createElement('button');
     markButtonNode.setAttribute("class", "mark-button");
+    markButtonNode.setAttribute("id", "mark-button"+todo.id);
+    var labelmark = document.createElement("label");
+    labelmark.setAttribute("for", "mark-button"+todo.id);
     markButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
+    todoNode.appendChild(labelmark);
     todoNode.appendChild(markButtonNode);
     // add classes for css (done and done and done)
     return todoNode;
