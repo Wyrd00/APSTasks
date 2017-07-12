@@ -23,11 +23,6 @@ As a disorganised person I want to:
 The To-Do Lill encompass the following:
 
 - Have a box containing the elements
-<<<<<<< HEAD
-=======
-_
->>>>>>> f1e68d098188c4efd570e4daeea61e24921ff055
-
 
 ## To run the tests
 
@@ -38,3 +33,5 @@ npm run test
 ```
 
 ## To go to the page
+
+https://facn2.github.io/APSTasks/
