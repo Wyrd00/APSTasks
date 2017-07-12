@@ -8,10 +8,6 @@ var initialTodo = mockdata.state;
 console.log(logic);
 console.log(mockdata);
 
-// test('If the test is true it should return true', function(t) {
-//   t.equal(0, 0, "Should be 0");
-//   t.end();
-// });
 
 // Test addTodo successfully pass
 test('Add todo function', function(t) {
@@ -75,20 +71,6 @@ test("Delete any todo", function(t) {
   t.end();
 });
 
-// //Test deleteTodo successfully fail
-// test("DeleteTodo", function(t) {
-//   // var initialTodo = mockdata.state;
-//   var deletingId = -2;
-//   var result = logic.deleteTodo(initialTodo, deletingId)
-//   var finalTodo = [
-//     { id: -3, description: 'first todo' },
-//     { id: -2, description: 'second todo' },
-//   ]
-//   t.deepEqual(result, finalTodo, "Should remove the Object with id -1");
-//   // console.log(result);
-//   t.end();
-// });
-
 //Test markTodo 'done' from false to true
 test("Test markTodo to change 'done' boolean from false to true", function(t) {
   //var initialTodo = mockdata.state;
@@ -99,7 +81,7 @@ test("Test markTodo to change 'done' boolean from false to true", function(t) {
     { id: -2, description: 'cut onions', done: false },
     { id: -1, description: 'dice tomatoes', done: true },
   ];
-  t.deepEqual(result, finalTodo, "Should change 'done' value with id -1");
+  t.deepEqual(result, finalTodo, "Should change 'done' with id -1");
   // console.log(result);
   t.end();
 });
