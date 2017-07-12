@@ -1,7 +1,7 @@
 var test = require('tape');
 var logic = require('./logic.js');
 var mockdata = require("./mockdata.js");
-var dom = require("./dom.js");
+
 
 var initialTodo = mockdata.state;
 

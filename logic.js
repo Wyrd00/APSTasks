@@ -45,12 +45,12 @@ var todoFunctions = {
     // this element will have its done value toggled
     // hint: array.map
   },
-  sortTodos: function(todos, sortFunction) {
-    // stretch goal! Do this last
-    // should leave the input arguement todos unchanged
-    // sortFunction will have same signature as the sort function in array.sort
-    // hint: array.slice, array.sort
-  },
+  // sortTodos: function(todos, sortFunction) {
+  //   // stretch goal! Do this last
+  //   // should leave the input arguement todos unchanged
+  //   // sortFunction will have same signature as the sort function in array.sort
+  //   // hint: array.slice, array.sort
+  // },
 };
 
 module.exports = todoFunctions
