@@ -24,3 +24,12 @@ The To-Do Lill encompass the following:
 
 - Have a box containing the elements
 _
+
+
+## To run the tests
+
+Type the following into terminal:
+
+```
+npm run test
+```
