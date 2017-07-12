@@ -36,3 +36,5 @@ Type the following into terminal:
 ```
 npm run test
 ```
+
+## To go to the page
