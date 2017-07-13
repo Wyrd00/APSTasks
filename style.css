@@ -41,7 +41,7 @@ li:nth-child(2n){
   margin-left: 10px;
 	margin-right: 20px;
   display: inline-block;
-	text-align: center;
+	text-align: left;
   max-width: 70%;
 }
 
