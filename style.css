@@ -52,11 +52,24 @@ input {
 }
 
 #container {
-	width: 360px;
+	width: 460px;
 	margin: 100px auto;
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 
+}
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  #container {
+  	width: 100%&;
+  	margin: 100px auto;
+  	background: #f7f7f7;
+  	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+  }
 }
 
 .buttons {
