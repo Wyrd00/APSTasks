@@ -68,7 +68,7 @@
       // what is inside event.target?
       event.preventDefault();
       var description = document.getElementById("description").value;
-      var input = event.target.description.target;
+    //  can also be written like this: var input = event.target.description.target;
     //  console.log(description);
     //  hint: todoFunctions.addTodo
       var newTodo = {}; // ?? change this!
