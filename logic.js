@@ -14,8 +14,6 @@ var todoFunctions = {
   })(),
   addTodo: function(todos, newTodo) {
     if (newTodo === undefined || newTodo.description.trim() === "") {
-      newTodo.style = "red";
-      console.log()
       return todos;
     }
     else {

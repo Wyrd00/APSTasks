@@ -17,7 +17,7 @@
     var todoNode = document.createElement('li');
     var spanAdd = document.createElement("span");
     var textnode = document.createTextNode(todo.description);
-    spanAdd.setAttribute("class", "listOfTodos-"+todo.done);
+    spanAdd.setAttribute("class", "descriptionSpan listOfTodos-"+todo.done);
     // console.log(todo);
     spanAdd.appendChild(textnode);
     todoNode.appendChild(spanAdd);
