@@ -1,5 +1,5 @@
 body {
-  font-family: 'FontAwesome';
+  font-family: helvetica;
   background: linear-gradient(to right, #cbb4d4, #20002c);
 }
 
@@ -22,6 +22,7 @@ ul {
 
 li {
   display: flex;
+  justify-content: space-between;
 	background: #fff;
 	height: 40px;
 	line-height: 40px;
@@ -60,7 +61,6 @@ input {
 
 .buttons {
   display: flex;
-  justify-content: space-between;
 }
 
 .listOfTodos-true {
