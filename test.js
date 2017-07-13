@@ -51,7 +51,7 @@ test('Add done: false key', function(t) {
     { id: -1, description: 'dice tomatoes', done: false },
     { id: 3, description: 'new todo', done: false },
   ];
-  t.deepEqual(result, updatedTodo, "Should add todo with correcr 'done:false' key");
+  t.deepEqual(result, updatedTodo, "Should add todo with correct 'done:false' key");
   // console.log(result);
   t.end();
 });

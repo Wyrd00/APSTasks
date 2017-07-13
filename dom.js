@@ -71,8 +71,8 @@
     //  can also be written like this: var input = event.target.description.target;
     //  console.log(description);
     //  hint: todoFunctions.addTodo
-      var newTodo = {}; // ?? change this!
-      newTodo.description = description;
+      var newTodo = {description}; // ?? change this!
+      // newTodo.description = description;
     //  console.log(newState);
       var newState = todoFunctions.addTodo(state, newTodo);
       update(newState);
