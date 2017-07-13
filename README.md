@@ -28,7 +28,11 @@ The To-Do Lill encompass the following:
 
 Type the following into terminal:
 
+
 ```
+npm install tape --save-dev
+npm install tap-spec --save
+npm install istanbul --save-dev
 npm run test
 ```
 
