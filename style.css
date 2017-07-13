@@ -52,11 +52,24 @@ input {
 }
 
 #container {
-	width: 360px;
+	width: 60%;
 	margin: 100px auto;
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 
+}
+
+@media only screen
+  and (min-device-width: 200px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  #container {
+  	width: auto;
+  	margin: 100px auto;
+  	background: #f7f7f7;
+  	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+  }
 }
 
 .buttons {
@@ -79,7 +92,7 @@ input {
 
 .delete-button {
   /*align-items: center;*/
-  background: url('./trash.png') center center no-repeat;
+  background: url('./images/trash.png') center center no-repeat;
   padding: 12px 15px;
 	background-color:#e74c3c;
 	border-radius:8px;
@@ -98,7 +111,7 @@ input {
 }
 
 .mark-button {
-  background: url('./check.png') center center no-repeat;
+  background: url('./images/check.png') center center no-repeat;
   padding: 10px 15px;
   background-color:#40c71f;
   border-radius:8px;
