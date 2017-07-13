@@ -13,10 +13,22 @@ var todoFunctions = {
     return incrementCounter;
   })(),
   addTodo: function(todos, newTodo) {
-    newTodo.id = todoFunctions.generateId();
-    newTodo.done = false;
-    var updatedTodo = todos.concat(newTodo);
+    if (newTodo === undefined || newTodo.description.trim() === "") {
+      newTodo.style = "red";
+      console.log()
+      return todos;
+    }
+    else {
+      newTodo.id = todoFunctions.generateId();
+      newTodo.done = false;
+      var updatedTodo = todos.concat(newTodo);
+    }
     return updatedTodo;
+
+    // newTodo.id = todoFunctions.generateId();
+    // newTodo.done = false;
+    // var updatedTodo = todos.concat(newTodo);
+    // return updatedTodo;
     // should leave the input argument todos unchanged
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
@@ -53,6 +65,6 @@ var todoFunctions = {
   // },
 };
 
-if (typeof module !== 'undefined' && typeof module !== 'undefined') {
+if (typeof module !== 'undefined') {
   module.exports = todoFunctions;
 }

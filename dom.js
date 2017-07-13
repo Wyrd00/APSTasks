@@ -69,9 +69,8 @@
       event.preventDefault();
       var description = document.getElementById("description").value;
     //  can also be written like this: var input = event.target.description.target;
-    //  console.log(description);
     //  hint: todoFunctions.addTodo
-      var newTodo = {description}; // ?? change this!
+      var newTodo = {description: description}; // ?? change this!
       document.getElementById("add-todo").reset();
       // newTodo.description = description;
     //  console.log(newState);

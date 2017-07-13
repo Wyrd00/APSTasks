@@ -11,12 +11,12 @@ console.log(mockdata);
 // Test addTodo successfully pass
 test('Add todo function', function(t) {
   //var initialTodo = mockdata.state;
-  var newTodoSub = [{ id: 0, description: 'mix ingredients', done: false }];
+  var newTodoSub = { id: 0, description: 'mix ingredients', done: false };
   var updatedTodo = [
     { id: -3, description: 'smash avocado', done: false },
     { id: -2, description: 'cut onions', done: false },
     { id: -1, description: 'dice tomatoes', done: false },
-    { id: 0, description: 'mix ingredients', done: false },
+    { id: 1, description: 'mix ingredients', done: false },
   ];
   var result = logic.addTodo(initialTodo, newTodoSub);
   t.deepEqual(result, updatedTodo, "Should add todo successfully");

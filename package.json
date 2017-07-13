@@ -4,7 +4,7 @@
   "description": "Amy Paul &amp; Steph's To-Do List",
   "main": "index.js",
   "scripts": {
-    "test": "nyc tape test.js | tap-spec"
+    "test": "nyc istanbul cover tape test.js | tap-spec"
   },
   "repository": {
     "type": "git",
