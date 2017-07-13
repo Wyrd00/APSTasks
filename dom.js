@@ -18,7 +18,7 @@
     var spanAdd = document.createElement("span");
     var textnode = document.createTextNode(todo.description);
     spanAdd.setAttribute("class", "listOfTodos-"+todo.done);
-    console.log(todo);
+    // console.log(todo);
     spanAdd.appendChild(textnode);
     todoNode.appendChild(spanAdd);
     //console.log(todoNode);
@@ -72,8 +72,11 @@
     //  console.log(description);
     //  hint: todoFunctions.addTodo
       var newTodo = {description}; // ?? change this!
+      document.getElementById("add-todo").reset();
       // newTodo.description = description;
     //  console.log(newState);
+      console.log(newTodo);
+      //console.log(description);
       var newState = todoFunctions.addTodo(state, newTodo);
       update(newState);
     });
@@ -94,5 +97,6 @@
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
   };
+
   if (container) renderState(state);
 })();
