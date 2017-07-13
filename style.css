@@ -1,6 +1,6 @@
 body {
-font-family: 'FontAwesome';
-background: linear-gradient(to right, #cbb4d4, #20002c);
+  font-family: 'FontAwesome';
+  background: linear-gradient(to right, #cbb4d4, #20002c);
 }
 
 h1 {
@@ -20,6 +20,7 @@ ul {
 }
 
 li {
+  display: flex;
 	background: #fff;
 	height: 40px;
 	line-height: 40px;
@@ -36,7 +37,6 @@ span {
 	margin-right: 20px;
   display: inline-block;
 	text-align: center;
-  /*border: 3px solid blue;*/
 }
 
 input {
@@ -49,12 +49,6 @@ input {
 	border: 3px solid rgba(0, 0, 0, 0);
 }
 
-input: focus{
-	background: #fff;
-	border: 3px solid #2980b9;
-	outline: none;
-}
-
 #container {
 	width: 360px;
 	margin: 100px auto;
@@ -63,9 +57,15 @@ input: focus{
 
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .listOfTodos-true {
   position: relative;
 }
+
 .listOfTodos-true:after {
   /*Put a line through the marked text*/
   content: '';
@@ -77,13 +77,13 @@ input: focus{
 }
 
 .delete-button {
-	position: relative;
+  /*align-items: center;*/
   background: url('./trash.png') center center no-repeat;
-
   padding: 16px 16px;
 	background-color:#f16622;
 	border-radius:8px;
 	border:1px solid #055c0e;
+  margin: 3px;
 }
 
 .delete-button:hover {
@@ -101,6 +101,8 @@ input: focus{
   background-color:#99cd19;
   border-radius:8px;
   border:1px solid #274dd2;
+  margin: 3px;
+  justify-content: flex-end;
 }
 
 .mark-button:hover {
@@ -110,11 +112,6 @@ input: focus{
 .mark-button:active {
 	position:relative;
 	top:1px;
-}
-
-.completed {
-	color: gray;
-	text-decoration: line-through;
 }
 
 footer {

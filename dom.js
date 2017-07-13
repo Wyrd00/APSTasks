@@ -10,12 +10,10 @@
     { id: -3, description: 'first todo' },
     { id: -2, description: 'second todo' },
     { id: -1, description: 'third todo' },
-    { id: 0, description: 'fourth todo' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
-    console.log(todo);
     var todoNode = document.createElement('li');
     var spanAdd = document.createElement("span");
     var textnode = document.createTextNode(todo.description);
@@ -26,8 +24,10 @@
     //console.log(todoNode);
     document.getElementById("todo-container").appendChild(todoNode);
 
-    console.log(todo.id);
     // add span holding description (done and done)
+    // create div for buttons
+    var buttons = document.createElement("div");
+    buttons.setAttribute("class", "buttons");
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
     deleteButtonNode.setAttribute("class", "delete-button");
@@ -39,8 +39,8 @@
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
-    todoNode.appendChild(labeldelete);
-    todoNode.appendChild(deleteButtonNode);
+    buttons.appendChild(labeldelete);
+    buttons.appendChild(deleteButtonNode);
 
     // add markTodo button
     var markButtonNode = document.createElement('button');
@@ -53,8 +53,9 @@
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
-    todoNode.appendChild(labelmark);
-    todoNode.appendChild(markButtonNode);
+    buttons.appendChild(labelmark);
+    buttons.appendChild(markButtonNode);
+    todoNode.appendChild(buttons);
     // add classes for css (done and done and done)
     return todoNode;
   };
